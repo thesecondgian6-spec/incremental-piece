@@ -17,63 +17,126 @@
 
 <div id="app">
 
-<header>
+<section class="hero">
 
-<h1>Incremental Piece</h1>
+    <div class="hero-overlay">
 
-<div class="currency">
+        <div class="top-bar">
 
-<div>
-💰
-<span id="beli">1000</span>
-</div>
+            <div class="logo">
+                <h1>Incremental Piece</h1>
+            </div>
 
-<div>
-💎
-<span id="gems">50</span>
-</div>
+            <div class="currency">
 
-</div>
+                <div>
+                    💰
+                    <span id="beli">1000</span>
+                </div>
 
-</header>
+                <div>
+                    💎
+                    <span id="gems">50</span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="hero-text">
+            <h2>Orange Town</h2>
+            <p>East Blue</p>
+        </div>
+
+    </div>
+
+</section>
 
 <div class="player-card">
 
-<div class="avatar"></div>
+<div class="avatar">
 
-<div>
+🏴‍☠️
+
+</div>
+
+<div class="player-info">
 
 <h2>Captain Maru</h2>
 
 <p>Lv.1 Rookie Pirate</p>
 
+<div class="tags">
+
+<span>Human</span>
+
+<span>No Fruit</span>
+
+<span>Rusty Sword</span>
+
 </div>
 
-<div class="power">
+</div>
+
+<div class="power-box">
 
 Power
 
-<h3 id="power">12</h3>
+<h2 id="power">33</h2>
 
 </div>
 
 </div>
 
-<div class="card">
 
-<h3>Current Island</h3>
 
-<p>Orange Town</p>
+<div class="battle-card">
 
-<small>Recommended Power: 15</small>
+<h2>Bandit</h2>
 
-<button id="battleBtn">
+<p>Lv.2</p>
 
-Battle
+<div class="hp-bar">
+
+<div class="hp-fill"></div>
+
+</div>
+
+<div class="battle-info">
+
+<span>120 / 120 HP</span>
+
+<span>150 Beli</span>
+
+</div>
+
+<button>
+
+⚔ Start Battle
 
 </button>
 
 </div>
+
+
+
+<div class="quest-card">
+
+<h3>Daily Quest</h3>
+
+<p>Train 10 Times</p>
+
+<div class="progress">
+
+<div class="progress-fill"></div>
+
+</div>
+
+<small>4 / 10</small>
+
+</div>
+
+
 
 <div class="card">
 
@@ -89,6 +152,8 @@ Train
 
 </div>
 
+
+
 <div class="card">
 
 <h3>Daily Reward</h3>
@@ -103,21 +168,61 @@ Claim
 
 </div>
 
+
+
+<div class="reward-card">
+
+<h3>Offline Rewards</h3>
+
+<p>2h 18m</p>
+
+<button>
+
+Claim Rewards
+
+</button>
+
+</div>
+
+
+
 <nav>
 
-<button>🏠</button>
+<button>
+    <i data-lucide="house"></i>
+    <span>Home</span>
+</button>
 
-<button>⚔</button>
+<button>
+    <i data-lucide="swords"></i>
+    <span>Adventure</span>
+</button>
 
-<button>🎲</button>
+<button>
+    <i data-lucide="dice-5"></i>
+    <span>Summon</span>
+</button>
 
-<button>👥</button>
+<button>
+    <i data-lucide="users"></i>
+    <span>Crew</span>
+</button>
 
-<button>☰</button>
+<button>
+    <i data-lucide="menu"></i>
+    <span>Menu</span>
+</button>
 
 </nav>
 
 </div>
+
+
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<script>
+    lucide.createIcons();
+</script>
 
 <script src="script.js"></script>
 

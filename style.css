@@ -7,7 +7,12 @@ font-family:Inter,sans-serif;
 
 body{
 
-background:#081523;
+background:
+linear-gradient(
+180deg,
+#071420,
+#0c2238,
+#081523);
 
 color:white;
 
@@ -167,16 +172,153 @@ border-radius:20px;
 
 }
 
-nav button{
+nav button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    background: transparent;
+    color: white;
+    border: none;
+}
 
-width:55px;
+nav button i {
+    width: 24px;
+    height: 24px;
+}
 
-height:55px;
+nav button span {
+    font-size: 11px;
+    font-weight: 600;
+}
 
-padding:0;
+.hero{
 
-font-size:22px;
+height:220px;
 
-background:#1b3d5c;
+border-radius:0 0 30px 30px;
+
+background:url("assets/islands/orange-town.jpg");
+
+background-size:cover;
+
+background-position:center;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.hero-overlay{
+
+position:absolute;
+
+inset:0;
+
+background:linear-gradient(to top,
+rgba(6,12,20,.9),
+rgba(6,12,20,.15));
+
+display:flex;
+
+justify-content:flex-end;
+
+flex-direction:column;
+
+padding:24px;
+
+}
+
+.hero h1{
+
+font-size:34px;
+
+font-weight:800;
+
+}
+
+.hero p{
+
+opacity:.8;
+
+}
+
+.progress{
+
+height:8px;
+
+background:#25364a;
+
+border-radius:999px;
+
+overflow:hidden;
+
+margin-top:12px;
+
+}
+
+.progress-fill{
+
+width:40%;
+
+height:100%;
+
+background:#ffc431;
+
+transition:.3s;
+
+}
+
+.hp-bar{
+
+height:12px;
+
+background:#27384d;
+
+border-radius:999px;
+
+overflow:hidden;
+
+margin:18px 0;
+
+}
+
+.hp-fill{
+
+width:100%;
+
+height:100%;
+
+background:linear-gradient(90deg,#3ad45b,#78ff80);
+
+transition:.3s;
+
+}
+
+.player-card{
+
+margin-top:-60px;
+
+position:relative;
+
+z-index:20;
+
+background:rgba(18,33,48,.95);
+
+backdrop-filter:blur(14px);
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:22px;
+
+padding:18px;
+
+display:flex;
+
+align-items:center;
+
+box-shadow:0 12px 40px rgba(0,0,0,.35);
 
 }
