@@ -1,324 +1,512 @@
+/* ==========================
+   Incremental Piece v0.2.0
+========================== */
+
+:root{
+
+    --bg:#081522;
+    --bg2:#0f2236;
+
+    --card:#162d44;
+    --card2:#1c3a56;
+
+    --gold:#ffbf38;
+    --blue:#58b8ff;
+    --green:#48d96d;
+
+    --text:#ffffff;
+    --sub:#b5c6d8;
+
+    --radius:22px;
+
+}
+
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Inter,sans-serif;
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
 }
 
 body{
 
-background:
-linear-gradient(
-180deg,
-#071420,
-#0c2238,
-#081523);
+    font-family:Inter,sans-serif;
 
-color:white;
+    background:
+    linear-gradient(
+        180deg,
+        #07131f,
+        #10273d,
+        #081522
+    );
 
-display:flex;
+    color:var(--text);
 
-justify-content:center;
-
-padding:20px;
+    min-height:100vh;
 
 }
 
 #app{
 
-width:100%;
+    max-width:430px;
 
-max-width:430px;
+    margin:auto;
 
-}
-
-header{
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-margin-bottom:20px;
+    padding-bottom:110px;
 
 }
 
-header h1{
-
-font-size:30px;
-
-font-weight:800;
-
-}
-
-.currency{
-
-display:flex;
-
-gap:12px;
-
-font-weight:700;
-
-}
-
-.player-card{
-
-background:#10273a;
-
-border-radius:18px;
-
-padding:18px;
-
-display:flex;
-
-align-items:center;
-
-margin-bottom:18px;
-
-}
-
-.avatar{
-
-width:60px;
-
-height:60px;
-
-border-radius:50%;
-
-background:#295c8f;
-
-margin-right:15px;
-
-}
-
-.power{
-
-margin-left:auto;
-
-text-align:right;
-
-}
-
-.card{
-
-background:#10273a;
-
-padding:18px;
-
-border-radius:18px;
-
-margin-bottom:16px;
-
-}
-
-.card h3{
-
-margin-bottom:8px;
-
-}
-
-button{
-
-width:100%;
-
-margin-top:14px;
-
-padding:14px;
-
-border:none;
-
-border-radius:14px;
-
-background:#ffb300;
-
-font-size:16px;
-
-font-weight:700;
-
-cursor:pointer;
-
-transition:.2s;
-
-}
-
-button:hover{
-
-transform:scale(1.03);
-
-}
-
-nav{
-
-position:fixed;
-
-bottom:18px;
-
-left:50%;
-
-transform:translateX(-50%);
-
-width:min(430px,95vw);
-
-display:flex;
-
-justify-content:space-around;
-
-background:#10273a;
-
-padding:12px;
-
-border-radius:20px;
-
-}
-
-nav button {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 4px;
-    background: transparent;
-    color: white;
-    border: none;
-}
-
-nav button i {
-    width: 24px;
-    height: 24px;
-}
-
-nav button span {
-    font-size: 11px;
-    font-weight: 600;
-}
+/* ---------------- Hero ---------------- */
 
 .hero{
 
-height:220px;
+    height:280px;
 
-border-radius:0 0 30px 30px;
+    padding:22px;
 
-background:url("assets/islands/orange-town.jpg");
+    display:flex;
 
-background-size:cover;
+    flex-direction:column;
 
-background-position:center;
+    justify-content:space-between;
 
-position:relative;
+    background:
+    linear-gradient(
+        rgba(0,0,0,.15),
+        rgba(0,0,0,.45)
+    ),
+    linear-gradient(
+        180deg,
+        #4da4ff,
+        #2b6ea7,
+        #17324d
+    );
 
-overflow:hidden;
+    border-radius:0 0 30px 30px;
 
 }
 
-.hero-overlay{
+.hero-top{
 
-position:absolute;
+    display:flex;
 
-inset:0;
+    justify-content:space-between;
 
-background:linear-gradient(to top,
-rgba(6,12,20,.9),
-rgba(6,12,20,.15));
-
-display:flex;
-
-justify-content:flex-end;
-
-flex-direction:column;
-
-padding:24px;
+    align-items:flex-start;
 
 }
 
 .hero h1{
 
-font-size:34px;
+    font-size:34px;
 
-font-weight:800;
+    font-weight:800;
 
 }
 
 .hero p{
 
-opacity:.8;
+    color:var(--sub);
 
 }
 
-.progress{
+.hero-bottom h2{
 
-height:8px;
+    font-size:40px;
 
-background:#25364a;
-
-border-radius:999px;
-
-overflow:hidden;
-
-margin-top:12px;
+    font-weight:800;
 
 }
 
-.progress-fill{
+/* ---------------- Currency ---------------- */
 
-width:40%;
+.currencies{
 
-height:100%;
+    display:flex;
 
-background:#ffc431;
-
-transition:.3s;
+    gap:12px;
 
 }
+
+.currency{
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(10px);
+
+    padding:10px 14px;
+
+    border-radius:999px;
+
+    font-weight:700;
+
+}
+
+/* ---------------- Player ---------------- */
+
+.player-card{
+
+    margin: -45px 16px 20px;
+
+    background:rgba(22,45,68,.96);
+
+    backdrop-filter:blur(18px);
+
+    border-radius:24px;
+
+    padding:18px;
+
+    display:flex;
+
+    align-items:center;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.35);
+
+}
+
+.avatar{
+
+    width:68px;
+
+    height:68px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:linear-gradient(
+        135deg,
+        var(--gold),
+        #ff8a00
+    );
+
+    font-size:28px;
+
+    margin-right:15px;
+
+}
+
+.player-info{
+
+    flex:1;
+
+}
+
+.player-info h2{
+
+    font-size:20px;
+
+}
+
+.player-info p{
+
+    color:var(--sub);
+
+    margin-top:3px;
+
+}
+
+.tags{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:6px;
+
+    margin-top:10px;
+
+}
+
+.tags span{
+
+    background:#294967;
+
+    padding:5px 10px;
+
+    border-radius:999px;
+
+    font-size:12px;
+
+}
+
+.power{
+
+    text-align:right;
+
+}
+
+.power small{
+
+    color:var(--sub);
+
+}
+
+.power h2{
+
+    color:var(--gold);
+
+    font-size:34px;
+
+}
+
+/* ---------------- Panels ---------------- */
+
+.panel{
+
+    background:var(--card);
+
+    margin:18px 16px;
+
+    border-radius:24px;
+
+    padding:20px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.18);
+
+}
+
+.panel-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:12px;
+
+}
+
+.panel h2{
+
+    font-size:20px;
+
+}
+
+.panel h3{
+
+    margin-bottom:12px;
+
+}
+
+/* ---------------- HP ---------------- */
 
 .hp-bar{
 
-height:12px;
+    height:12px;
 
-background:#27384d;
+    background:#29425b;
 
-border-radius:999px;
+    border-radius:999px;
 
-overflow:hidden;
+    overflow:hidden;
 
-margin:18px 0;
+    margin:12px 0;
 
 }
 
 .hp-fill{
 
-width:100%;
+    width:100%;
 
-height:100%;
+    height:100%;
 
-background:linear-gradient(90deg,#3ad45b,#78ff80);
+    background:
+    linear-gradient(
+        90deg,
+        var(--green),
+        #7fff9f
+    );
 
-transition:.3s;
+    transition:.3s;
 
 }
 
+.panel-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-bottom:10px;
+
+    color:var(--sub);
+
+}
+
+/* ---------------- Progress ---------------- */
+
+.progress{
+
+    margin:14px 0;
+
+    height:10px;
+
+    background:#29425b;
+
+    border-radius:999px;
+
+    overflow:hidden;
+
+}
+
+.progress-fill{
+
+    width:40%;
+
+    height:100%;
+
+    background:var(--gold);
+
+}
+
+/* ---------------- Buttons ---------------- */
+
+button{
+
+    width:100%;
+
+    border:none;
+
+    border-radius:16px;
+
+    padding:15px;
+
+    margin-top:16px;
+
+    cursor:pointer;
+
+    font-weight:700;
+
+    font-size:15px;
+
+    transition:.18s;
+
+}
+
+button:hover{
+
+    transform:translateY(-2px);
+
+}
+
+.primary{
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--gold),
+        #ff9d00
+    );
+
+}
+
+.panel button{
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--gold),
+        #ff9d00
+    );
+
+}
+
+/* ---------------- Navigation ---------------- */
+
+nav{
+
+    position:fixed;
+
+    left:50%;
+
+    bottom:18px;
+
+    transform:translateX(-50%);
+
+    width:min(430px,95vw);
+
+    background:rgba(18,33,48,.97);
+
+    backdrop-filter:blur(15px);
+
+    display:flex;
+
+    justify-content:space-around;
+
+    border-radius:22px;
+
+    padding:10px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.35);
+
+}
+
+nav button{
+
+    background:none;
+
+    color:white;
+
+    width:70px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:5px;
+
+    padding:8px;
+
+    margin:0;
+
+}
+
+nav span{
+
+    font-size:11px;
+
+}
+
+nav .active{
+
+    color:var(--gold);
+
+}
+
+/* ---------------- Animation ---------------- */
+
+.panel,
 .player-card{
 
-margin-top:-60px;
+    animation:fadeUp .5s ease;
 
-position:relative;
+}
 
-z-index:20;
+@keyframes fadeUp{
 
-background:rgba(18,33,48,.95);
+    from{
 
-backdrop-filter:blur(14px);
+        opacity:0;
 
-border:1px solid rgba(255,255,255,.08);
+        transform:translateY(15px);
 
-border-radius:22px;
+    }
 
-padding:18px;
+    to{
 
-display:flex;
+        opacity:1;
 
-align-items:center;
+        transform:translateY(0);
 
-box-shadow:0 12px 40px rgba(0,0,0,.35);
+    }
 
 }

@@ -1,15 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
 
-<title>Incremental Piece</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="style.css">
+    <title>Incremental Piece</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link
+        rel="stylesheet"
+        href="style.css">
 
 </head>
 
@@ -17,214 +34,333 @@
 
 <div id="app">
 
-<section class="hero">
+    <!-- Background -->
 
-    <div class="hero-overlay">
+    <div class="background"></div>
 
-        <div class="top-bar">
+    <!-- Hero -->
 
-            <div class="logo">
+    <header class="hero">
+
+        <div class="hero-top">
+
+            <div>
+
                 <h1>Incremental Piece</h1>
+
+                <p>East Blue</p>
+
             </div>
 
-            <div class="currency">
+            <div class="currencies">
 
-                <div>
+                <div class="currency">
+
                     💰
-                    <span id="beli">1000</span>
+
+                    <span id="beli">
+                        1000
+                    </span>
+
                 </div>
 
-                <div>
+                <div class="currency">
+
                     💎
-                    <span id="gems">50</span>
+
+                    <span id="gems">
+                        50
+                    </span>
+
                 </div>
 
             </div>
 
         </div>
 
-        <div class="hero-text">
-            <h2>Orange Town</h2>
-            <p>East Blue</p>
+        <div class="hero-bottom">
+
+            <h2 id="islandName">
+
+                Orange Town
+
+            </h2>
+
+            <p>
+
+                Begin your pirate adventure.
+
+            </p>
+
         </div>
 
-    </div>
+    </header>
 
-</section>
+    <!-- Player -->
 
-<div class="player-card">
+    <section
+        class="player-card">
 
-<div class="avatar">
+        <div class="avatar">
 
-🏴‍☠️
+            🏴‍☠️
+
+        </div>
+
+        <div class="player-info">
+
+            <h2 id="playerName">
+
+                Captain Maru
+
+            </h2>
+
+            <p id="playerLevel">
+
+                Lv.1 Rookie Pirate
+
+            </p>
+
+            <div class="tags">
+
+                <span>Human</span>
+
+                <span>No Fruit</span>
+
+                <span>Rusty Sword</span>
+
+            </div>
+
+        </div>
+
+        <div class="power">
+
+            <small>
+
+                Power
+
+            </small>
+
+            <h2 id="power">
+
+                12
+
+            </h2>
+
+        </div>
+
+    </section>
+
+    <!-- Battle -->
+
+    <section
+        class="panel">
+
+        <div class="panel-header">
+
+            <h2>
+
+                Current Battle
+
+            </h2>
+
+            <span>
+
+                Lv.2
+
+            </span>
+
+        </div>
+
+        <h3 id="enemyName">
+
+            Bandit
+
+        </h3>
+
+        <div class="hp-bar">
+
+            <div
+                id="enemyHP"
+                class="hp-fill">
+
+            </div>
+
+        </div>
+
+        <div class="panel-row">
+
+            <span>
+
+                HP
+
+            </span>
+
+            <span
+                id="enemyHealth">
+
+                120 / 120
+
+            </span>
+
+        </div>
+
+        <div class="panel-row">
+
+            <span>
+
+                Reward
+
+            </span>
+
+            <span>
+
+                💰150
+
+            </span>
+
+        </div>
+
+        <button
+            id="battleBtn"
+            class="primary">
+
+            ⚔ Start Battle
+
+        </button>
+
+    </section>
+
+    <!-- Daily Quest -->
+
+    <section
+        class="panel">
+
+        <h2>
+
+            Daily Quest
+
+        </h2>
+
+        <p>
+
+            Train 10 Times
+
+        </p>
+
+        <div class="progress">
+
+            <div
+                class="progress-fill">
+
+            </div>
+
+        </div>
+
+        <small>
+
+            0 / 10
+
+        </small>
+
+    </section>
+
+    <!-- Offline -->
+
+    <section
+        class="panel">
+
+        <h2>
+
+            Offline Rewards
+
+        </h2>
+
+        <p>
+
+            Ready to claim
+
+        </p>
+
+        <button
+            id="claimBtn">
+
+            Claim Rewards
+
+        </button>
+
+    </section>
+
+    <!-- Navigation -->
+
+    <nav>
+
+        <button class="active">
+
+            🏠
+
+            <span>
+
+                Home
+
+            </span>
+
+        </button>
+
+        <button>
+
+            ⚔
+
+            <span>
+
+                Adventure
+
+            </span>
+
+        </button>
+
+        <button>
+
+            🎲
+
+            <span>
+
+                Summon
+
+            </span>
+
+        </button>
+
+        <button>
+
+            👥
+
+            <span>
+
+                Crew
+
+            </span>
+
+        </button>
+
+        <button>
+
+            ☰
+
+            <span>
+
+                Menu
+
+            </span>
+
+        </button>
+
+    </nav>
 
 </div>
 
-<div class="player-info">
-
-<h2>Captain Maru</h2>
-
-<p>Lv.1 Rookie Pirate</p>
-
-<div class="tags">
-
-<span>Human</span>
-
-<span>No Fruit</span>
-
-<span>Rusty Sword</span>
-
-</div>
-
-</div>
-
-<div class="power-box">
-
-Power
-
-<h2 id="power">33</h2>
-
-</div>
-
-</div>
-
-
-
-<div class="battle-card">
-
-<h2>Bandit</h2>
-
-<p>Lv.2</p>
-
-<div class="hp-bar">
-
-<div class="hp-fill"></div>
-
-</div>
-
-<div class="battle-info">
-
-<span>120 / 120 HP</span>
-
-<span>150 Beli</span>
-
-</div>
-
-<button>
-
-⚔ Start Battle
-
-</button>
-
-</div>
-
-
-
-<div class="quest-card">
-
-<h3>Daily Quest</h3>
-
-<p>Train 10 Times</p>
-
-<div class="progress">
-
-<div class="progress-fill"></div>
-
-</div>
-
-<small>4 / 10</small>
-
-</div>
-
-
-
-<div class="card">
-
-<h3>Training</h3>
-
-<p>Train to become stronger.</p>
-
-<button id="trainBtn">
-
-Train
-
-</button>
-
-</div>
-
-
-
-<div class="card">
-
-<h3>Daily Reward</h3>
-
-<p>Claim free Beli.</p>
-
-<button id="claimBtn">
-
-Claim
-
-</button>
-
-</div>
-
-
-
-<div class="reward-card">
-
-<h3>Offline Rewards</h3>
-
-<p>2h 18m</p>
-
-<button>
-
-Claim Rewards
-
-</button>
-
-</div>
-
-
-
-<nav>
-
-<button>
-    <i data-lucide="house"></i>
-    <span>Home</span>
-</button>
-
-<button>
-    <i data-lucide="swords"></i>
-    <span>Adventure</span>
-</button>
-
-<button>
-    <i data-lucide="dice-5"></i>
-    <span>Summon</span>
-</button>
-
-<button>
-    <i data-lucide="users"></i>
-    <span>Crew</span>
-</button>
-
-<button>
-    <i data-lucide="menu"></i>
-    <span>Menu</span>
-</button>
-
-</nav>
-
-</div>
-
-
-<script src="https://unpkg.com/lucide@latest"></script>
-
-<script>
-    lucide.createIcons();
-</script>
-
-<script src="script.js"></script>
+<script type="module" src="main.js"></script>
 
 </body>
+
 </html>
