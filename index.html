@@ -11,6 +11,10 @@
 
     <title>Incremental Piece</title>
 
+    <meta
+        name="theme-color"
+        content="#081522">
+
     <link
         rel="preconnect"
         href="https://fonts.googleapis.com">
@@ -34,72 +38,75 @@
 
 <div id="app">
 
-    <!-- Background -->
-
-    <div class="background"></div>
-
-    <!-- Hero -->
+    <!-- ================= HERO ================= -->
 
     <header class="hero">
 
-        <div class="hero-top">
+        <div class="hero-overlay"></div>
 
-            <div>
+        <div class="hero-content">
 
-                <h1>Incremental Piece</h1>
+            <div class="hero-top">
 
-                <p>East Blue</p>
+                <div>
 
-            </div>
+                    <h1>Incremental Piece</h1>
 
-            <div class="currencies">
-
-                <div class="currency">
-
-                    💰
-
-                    <span id="beli">
-                        1000
-                    </span>
+                    <p id="seaName">
+                        East Blue
+                    </p>
 
                 </div>
 
-                <div class="currency">
+                <div class="currency-group">
 
-                    💎
+                    <div class="currency">
 
-                    <span id="gems">
-                        50
-                    </span>
+                        <span>💰</span>
+
+                        <span id="beli">
+                            1000
+                        </span>
+
+                    </div>
+
+                    <div class="currency">
+
+                        <span>💎</span>
+
+                        <span id="gems">
+                            50
+                        </span>
+
+                    </div>
 
                 </div>
 
             </div>
 
-        </div>
+            <div class="hero-bottom">
 
-        <div class="hero-bottom">
+                <h2 id="islandName">
 
-            <h2 id="islandName">
+                    Orange Town
 
-                Orange Town
+                </h2>
 
-            </h2>
+                <p>
 
-            <p>
+                    The beginning of your pirate journey.
 
-                Begin your pirate adventure.
+                </p>
 
-            </p>
+            </div>
 
         </div>
 
     </header>
 
-    <!-- Player -->
+    <!-- ================= PLAYER ================= -->
 
-    <section
-        class="player-card">
+    <section class="player-card">
 
         <div class="avatar">
 
@@ -115,7 +122,7 @@
 
             </h2>
 
-            <p id="playerLevel">
+            <p id="playerTitle">
 
                 Lv.1 Rookie Pirate
 
@@ -123,17 +130,29 @@
 
             <div class="tags">
 
-                <span>Human</span>
+                <span id="raceTag">
 
-                <span>No Fruit</span>
+                    Human
 
-                <span>Rusty Sword</span>
+                </span>
+
+                <span id="fruitTag">
+
+                    No Fruit
+
+                </span>
+
+                <span id="weaponTag">
+
+                    Rusty Sword
+
+                </span>
 
             </div>
 
         </div>
 
-        <div class="power">
+        <div class="power-box">
 
             <small>
 
@@ -151,10 +170,9 @@
 
     </section>
 
-    <!-- Battle -->
+    <!-- ================= CURRENT BATTLE ================= -->
 
-    <section
-        class="panel">
+    <section class="panel">
 
         <div class="panel-header">
 
@@ -164,7 +182,7 @@
 
             </h2>
 
-            <span>
+            <span id="enemyLevel">
 
                 Lv.2
 
@@ -172,36 +190,89 @@
 
         </div>
 
-        <h3 id="enemyName">
+        <div class="enemy-preview">
 
-            Bandit
+            <div class="enemy-avatar">
 
-        </h3>
+                👤
 
-        <div class="hp-bar">
+            </div>
 
-            <div
-                id="enemyHP"
-                class="hp-fill">
+            <div>
+
+                <h3 id="enemyName">
+
+                    Bandit
+
+                </h3>
+
+                <p>
+
+                    Common Enemy
+
+                </p>
 
             </div>
 
         </div>
 
-        <div class="panel-row">
+        <div class="hp-section">
 
-            <span>
+            <div class="panel-row">
 
-                HP
+                <span>
 
-            </span>
+                    Enemy HP
 
-            <span
-                id="enemyHealth">
+                </span>
 
-                120 / 120
+                <span id="enemyHealth">
 
-            </span>
+                    120 / 120
+
+                </span>
+
+            </div>
+
+            <div class="hp-bar">
+
+                <div
+                    id="enemyHP"
+                    class="hp-fill">
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="hp-section">
+
+            <div class="panel-row">
+
+                <span>
+
+                    Your HP
+
+                </span>
+
+                <span id="playerHealth">
+
+                    100 / 100
+
+                </span>
+
+            </div>
+
+            <div class="hp-bar">
+
+                <div
+                    id="playerHP"
+                    class="hp-fill player-fill">
+
+                </div>
+
+            </div>
 
         </div>
 
@@ -213,9 +284,9 @@
 
             </span>
 
-            <span>
+            <span id="battleReward">
 
-                💰150
+                💰150 • ⭐25 EXP
 
             </span>
 
@@ -229,12 +300,65 @@
 
         </button>
 
+        <div id="battleLog">
+
+            Ready to fight.
+
+        </div>
+
     </section>
 
-    <!-- Daily Quest -->
+    <!-- ================= PLAYER PROGRESSION ================= -->
 
-    <section
-        class="panel">
+    <section class="panel">
+
+        <div class="panel-header">
+
+            <h2>
+
+                Progress
+
+            </h2>
+
+            <span id="playerLevel">
+
+                Lv.1
+
+            </span>
+
+        </div>
+
+        <div class="panel-row">
+
+            <span>
+
+                Experience
+
+            </span>
+
+            <span id="expText">
+
+                0 / 100
+
+            </span>
+
+        </div>
+
+        <div class="progress">
+
+            <div
+                id="expFill"
+                class="progress-fill">
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= DAILY QUEST ================= -->
+
+    <section class="panel">
 
         <h2>
 
@@ -244,20 +368,21 @@
 
         <p>
 
-            Train 10 Times
+            Defeat 10 Bandits
 
         </p>
 
         <div class="progress">
 
             <div
+                id="questFill"
                 class="progress-fill">
 
             </div>
 
         </div>
 
-        <small>
+        <small id="questText">
 
             0 / 10
 
@@ -265,10 +390,9 @@
 
     </section>
 
-    <!-- Offline -->
+    <!-- ================= OFFLINE REWARDS ================= -->
 
-    <section
-        class="panel">
+    <section class="panel">
 
         <h2>
 
@@ -278,12 +402,11 @@
 
         <p>
 
-            Ready to claim
+            Come back later to collect idle rewards.
 
         </p>
 
-        <button
-            id="claimBtn">
+        <button id="claimBtn">
 
             Claim Rewards
 
@@ -291,13 +414,17 @@
 
     </section>
 
-    <!-- Navigation -->
+    <!-- ================= BOTTOM NAV ================= -->
 
     <nav>
 
-        <button class="active">
+        <button class="nav-btn active">
 
-            🏠
+            <span class="icon">
+
+                🏠
+
+            </span>
 
             <span>
 
@@ -307,9 +434,13 @@
 
         </button>
 
-        <button>
+        <button class="nav-btn">
 
-            ⚔
+            <span class="icon">
+
+                ⚔
+
+            </span>
 
             <span>
 
@@ -319,9 +450,13 @@
 
         </button>
 
-        <button>
+        <button class="nav-btn">
 
-            🎲
+            <span class="icon">
+
+                🎲
+
+            </span>
 
             <span>
 
@@ -331,9 +466,13 @@
 
         </button>
 
-        <button>
+        <button class="nav-btn">
 
-            👥
+            <span class="icon">
+
+                👥
+
+            </span>
 
             <span>
 
@@ -343,9 +482,13 @@
 
         </button>
 
-        <button>
+        <button class="nav-btn">
 
-            ☰
+            <span class="icon">
+
+                ☰
+
+            </span>
 
             <span>
 

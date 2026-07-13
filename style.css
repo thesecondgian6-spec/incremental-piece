@@ -1,23 +1,26 @@
-/* ==========================
-   Incremental Piece v0.2.0
-========================== */
+/* ===========================================
+   Incremental Piece v0.3.0
+   Mobile RPG UI
+=========================================== */
 
 :root{
 
-    --bg:#081522;
-    --bg2:#0f2236;
+    --bg:#07131f;
+    --bg2:#0d2238;
 
-    --card:#162d44;
-    --card2:#1c3a56;
+    --card:#162b40;
+    --card-light:#1f3c59;
 
-    --gold:#ffbf38;
-    --blue:#58b8ff;
-    --green:#48d96d;
+    --gold:#ffc847;
+    --blue:#57b8ff;
+    --green:#4fe27c;
 
     --text:#ffffff;
     --sub:#b5c6d8;
 
-    --radius:22px;
+    --danger:#ff6565;
+
+    --radius:24px;
 
 }
 
@@ -29,23 +32,33 @@
 
 }
 
+html{
+
+    scroll-behavior:smooth;
+
+}
+
 body{
 
-    font-family:Inter,sans-serif;
+    font-family:"Inter",sans-serif;
 
     background:
     linear-gradient(
         180deg,
-        #07131f,
-        #10273d,
-        #081522
+        #06111b 0%,
+        #0b2237 45%,
+        #07131f 100%
     );
 
-    color:var(--text);
+    color:white;
 
     min-height:100vh;
 
+    overflow-x:hidden;
+
 }
+
+/* ============================= */
 
 #app{
 
@@ -53,17 +66,59 @@ body{
 
     margin:auto;
 
+    min-height:100vh;
+
     padding-bottom:110px;
 
 }
 
-/* ---------------- Hero ---------------- */
+/* ============================= */
 
 .hero{
 
-    height:280px;
+    position:relative;
 
-    padding:22px;
+    height:290px;
+
+    overflow:hidden;
+
+    border-radius:0 0 32px 32px;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.15),
+        rgba(0,0,0,.55)
+    ),
+    linear-gradient(
+        180deg,
+        #52a8ff,
+        #2569a2,
+        #17314a
+    );
+
+}
+
+.hero-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    radial-gradient(circle at top,
+    rgba(255,255,255,.15),
+    transparent 45%);
+
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:5;
+
+    height:100%;
 
     display:flex;
 
@@ -71,19 +126,7 @@ body{
 
     justify-content:space-between;
 
-    background:
-    linear-gradient(
-        rgba(0,0,0,.15),
-        rgba(0,0,0,.45)
-    ),
-    linear-gradient(
-        180deg,
-        #4da4ff,
-        #2b6ea7,
-        #17324d
-    );
-
-    border-radius:0 0 30px 30px;
+    padding:22px;
 
 }
 
@@ -105,55 +148,57 @@ body{
 
 }
 
+.hero h2{
+
+    font-size:42px;
+
+    font-weight:800;
+
+}
+
 .hero p{
 
     color:var(--sub);
 
 }
 
-.hero-bottom h2{
+/* ============================= */
 
-    font-size:40px;
-
-    font-weight:800;
-
-}
-
-/* ---------------- Currency ---------------- */
-
-.currencies{
+.currency-group{
 
     display:flex;
 
-    gap:12px;
+    gap:10px;
 
 }
 
 .currency{
 
-    background:rgba(255,255,255,.08);
+    display:flex;
 
-    backdrop-filter:blur(10px);
+    align-items:center;
+
+    gap:6px;
+
+    background:rgba(255,255,255,.08);
 
     padding:10px 14px;
 
     border-radius:999px;
 
+    backdrop-filter:blur(12px);
+
     font-weight:700;
 
 }
 
-/* ---------------- Player ---------------- */
+/* ============================= */
 
 .player-card{
 
-    margin: -45px 16px 20px;
+    position:relative;
 
-    background:rgba(22,45,68,.96);
-
-    backdrop-filter:blur(18px);
-
-    border-radius:24px;
+    margin:-45px 16px 20px;
 
     padding:18px;
 
@@ -161,15 +206,29 @@ body{
 
     align-items:center;
 
-    box-shadow:0 10px 30px rgba(0,0,0,.35);
+    gap:16px;
+
+    background:rgba(22,43,64,.96);
+
+    border:1px solid rgba(255,255,255,.06);
+
+    backdrop-filter:blur(18px);
+
+    border-radius:26px;
+
+    box-shadow:
+
+    0 12px 30px rgba(0,0,0,.35);
+
+    animation:fadeUp .5s ease;
 
 }
 
 .avatar{
 
-    width:68px;
+    width:70px;
 
-    height:68px;
+    height:70px;
 
     border-radius:50%;
 
@@ -179,15 +238,15 @@ body{
 
     align-items:center;
 
-    background:linear-gradient(
+    font-size:30px;
+
+    background:
+
+    linear-gradient(
         135deg,
         var(--gold),
-        #ff8a00
+        #ff9600
     );
-
-    font-size:28px;
-
-    margin-right:15px;
 
 }
 
@@ -205,9 +264,9 @@ body{
 
 .player-info p{
 
-    color:var(--sub);
-
     margin-top:3px;
+
+    color:var(--sub);
 
 }
 
@@ -215,9 +274,9 @@ body{
 
     display:flex;
 
-    flex-wrap:wrap;
-
     gap:6px;
+
+    flex-wrap:wrap;
 
     margin-top:10px;
 
@@ -227,47 +286,53 @@ body{
 
     background:#294967;
 
-    padding:5px 10px;
-
-    border-radius:999px;
+    color:white;
 
     font-size:12px;
 
+    border-radius:999px;
+
+    padding:5px 10px;
+
 }
 
-.power{
+.power-box{
 
     text-align:right;
 
 }
 
-.power small{
+.power-box small{
 
     color:var(--sub);
 
 }
 
-.power h2{
-
-    color:var(--gold);
+.power-box h2{
 
     font-size:34px;
 
+    color:var(--gold);
+
 }
 
-/* ---------------- Panels ---------------- */
+/* ============================= */
 
 .panel{
 
-    background:var(--card);
-
     margin:18px 16px;
-
-    border-radius:24px;
 
     padding:20px;
 
-    box-shadow:0 10px 25px rgba(0,0,0,.18);
+    border-radius:24px;
+
+    background:var(--card);
+
+    box-shadow:
+
+    0 10px 25px rgba(0,0,0,.18);
+
+    animation:fadeUp .5s ease;
 
 }
 
@@ -279,35 +344,89 @@ body{
 
     align-items:center;
 
-    margin-bottom:12px;
+    margin-bottom:15px;
 
 }
 
 .panel h2{
 
-    font-size:20px;
+    font-size:21px;
 
 }
 
 .panel h3{
 
-    margin-bottom:12px;
+    font-size:24px;
+
+    margin-bottom:8px;
 
 }
 
-/* ---------------- HP ---------------- */
+/* ============================= */
+
+.enemy-preview{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin-bottom:18px;
+
+}
+
+.enemy-avatar{
+
+    width:64px;
+
+    height:64px;
+
+    border-radius:18px;
+
+    background:var(--card-light);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:28px;
+
+}
+
+/* ============================= */
+
+.panel-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:10px;
+
+    color:var(--sub);
+
+}
+
+.hp-section{
+
+    margin-bottom:18px;
+
+}
 
 .hp-bar{
 
     height:12px;
 
-    background:#29425b;
-
     border-radius:999px;
 
     overflow:hidden;
 
-    margin:12px 0;
+    background:#2d4761;
 
 }
 
@@ -317,76 +436,89 @@ body{
 
     height:100%;
 
+    border-radius:999px;
+
     background:
+
     linear-gradient(
         90deg,
         var(--green),
-        #7fff9f
+        #87ffae
     );
 
-    transition:.3s;
+    transition:width .35s;
 
 }
 
-.panel-row{
+.player-fill{
 
-    display:flex;
+    background:
 
-    justify-content:space-between;
-
-    margin-bottom:10px;
-
-    color:var(--sub);
+    linear-gradient(
+        90deg,
+        var(--blue),
+        #8bd8ff
+    );
 
 }
 
-/* ---------------- Progress ---------------- */
+/* ============================= */
 
 .progress{
 
-    margin:14px 0;
-
     height:10px;
 
-    background:#29425b;
+    overflow:hidden;
 
     border-radius:999px;
 
-    overflow:hidden;
+    background:#304b66;
+
+    margin:14px 0;
 
 }
 
 .progress-fill{
 
-    width:40%;
+    width:0%;
 
     height:100%;
 
-    background:var(--gold);
+    border-radius:999px;
+
+    background:
+
+    linear-gradient(
+        90deg,
+        var(--gold),
+        #ff9800
+    );
+
+    transition:width .35s;
 
 }
 
-/* ---------------- Buttons ---------------- */
+/* ============================= */
 
 button{
 
     width:100%;
 
+    margin-top:18px;
+
     border:none;
-
-    border-radius:16px;
-
-    padding:15px;
-
-    margin-top:16px;
 
     cursor:pointer;
 
-    font-weight:700;
+    border-radius:18px;
+
+    padding:15px;
 
     font-size:15px;
 
-    transition:.18s;
+    font-weight:700;
+
+    transition:.15s;
 
 }
 
@@ -396,29 +528,47 @@ button:hover{
 
 }
 
+button:active{
+
+    transform:scale(.97);
+
+}
+
 .primary{
 
     background:
+
     linear-gradient(
         135deg,
         var(--gold),
-        #ff9d00
+        #ff9900
     );
 
 }
 
-.panel button{
+/* ============================= */
 
-    background:
-    linear-gradient(
-        135deg,
-        var(--gold),
-        #ff9d00
-    );
+#battleLog{
+
+    margin-top:18px;
+
+    min-height:70px;
+
+    padding:14px;
+
+    border-radius:18px;
+
+    background:#102131;
+
+    color:#d2dce5;
+
+    line-height:1.6;
+
+    font-size:14px;
 
 }
 
-/* ---------------- Navigation ---------------- */
+/* ============================= */
 
 nav{
 
@@ -432,29 +582,29 @@ nav{
 
     width:min(430px,95vw);
 
-    background:rgba(18,33,48,.97);
+    background:rgba(15,34,54,.96);
 
-    backdrop-filter:blur(15px);
+    backdrop-filter:blur(18px);
+
+    border-radius:24px;
 
     display:flex;
 
     justify-content:space-around;
 
-    border-radius:22px;
+    padding:12px;
 
-    padding:10px;
+    box-shadow:
 
-    box-shadow:0 15px 35px rgba(0,0,0,.35);
+    0 15px 35px rgba(0,0,0,.35);
 
 }
 
-nav button{
+.nav-btn{
 
     background:none;
 
     color:white;
-
-    width:70px;
 
     display:flex;
 
@@ -462,34 +612,35 @@ nav button{
 
     align-items:center;
 
-    gap:5px;
+    gap:4px;
 
-    padding:8px;
+    width:70px;
 
     margin:0;
 
+    padding:8px;
+
 }
 
-nav span{
+.nav-btn .icon{
+
+    font-size:22px;
+
+}
+
+.nav-btn span:last-child{
 
     font-size:11px;
 
 }
 
-nav .active{
+.nav-btn.active{
 
     color:var(--gold);
 
 }
 
-/* ---------------- Animation ---------------- */
-
-.panel,
-.player-card{
-
-    animation:fadeUp .5s ease;
-
-}
+/* ============================= */
 
 @keyframes fadeUp{
 
@@ -497,7 +648,7 @@ nav .active{
 
         opacity:0;
 
-        transform:translateY(15px);
+        transform:translateY(18px);
 
     }
 
@@ -508,5 +659,39 @@ nav .active{
         transform:translateY(0);
 
     }
+
+}
+
+/* ============================= */
+
+@media(max-width:420px){
+
+.hero h1{
+
+font-size:28px;
+
+}
+
+.hero h2{
+
+font-size:34px;
+
+}
+
+.player-card{
+
+margin-left:12px;
+
+margin-right:12px;
+
+}
+
+.panel{
+
+margin-left:12px;
+
+margin-right:12px;
+
+}
 
 }
